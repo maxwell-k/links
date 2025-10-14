@@ -324,3 +324,13 @@ ul li {
 	font-weight:800;
 	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2') format('woff2');
 }
+
+/* Customisations
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  text-align: left;
+}
+.container footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
