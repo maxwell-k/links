@@ -6,7 +6,33 @@
 footer {
   text-align: left;
 }
+.container p {
+  text-align: justify;
+}
 .container footer p {
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+@font-face {
+  font-display: swap;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts2/nunito-v32-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Kameron";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts2/kameron-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+h1 {
+  color: #00547c;
+  font-family: "Nunito", "NotoSans", sans-serif;
+  font-size: 4.5rem;
+}
+body p,
+details {
+  font-family: "Kameron", "Georgia", serif;
 }
