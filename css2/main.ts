@@ -18,6 +18,7 @@ async function main() {
   const { code: transformed } = transform({
     filename: "input.css",
     code: new TextEncoder().encode(purged),
+    minify: true,
     visitor: {
       Declaration: {
         custom: { float },
