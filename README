@@ -1,0 +1,6 @@
+Commands to add the upstream remote:
+
+    git remote add upstream git@github.com:sethcottle/littlelink.git \
+    && git fetch --all
+
+<!-- vim: set filetype=markdown : -->
