@@ -1,0 +1,12 @@
+@import "../css/reset.css";
+@import "../css/brands.css";
+@import "../css/style.css";
+@import "brands-extended.css";
+
+footer {
+  text-align: left;
+}
+.container footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}

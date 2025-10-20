@@ -1,5 +1,2 @@
-.DS_Store
-.idea
-.devcontainer
-.wrangler/
-node_modules/
+/.en.utf-8.add.spl
+/css2/node_modules/
