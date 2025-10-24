@@ -14,23 +14,29 @@ async function main() {
     css: [{ raw: new TextDecoder().decode(bundled) }],
   });
 
-  const { code: transformed } = transform({
-    filename: "input.css",
+  const { code: readable } = transform({
+    filename: "",
     code: new TextEncoder().encode(purged),
-    minify: true,
+    minify: false,
     visitor: {
       Declaration: {
-        custom: { float },
+        custom,
         position,
       },
     },
   });
+  fs.writeFileSync("readable.css", readable);
 
-  fs.writeFileSync("style.css", transformed);
+  const { code: minified } = transform({
+    filename: "",
+    code: readable,
+    minify: true,
+  });
+  fs.writeFileSync("style.css", minified);
 }
 
 // delete any float: center
-const float = (rule: CustomProperty) => {
+const custom = (rule: CustomProperty) => {
   if (
     rule.name === "float" &&
     rule.value[0].type === "token" &&
