@@ -13,6 +13,9 @@ async function main() {
   const [{ css: purged }] = await new PurgeCSS().purge({
     content: ["../index.html"],
     css: [{ raw: new TextDecoder().decode(bundled) }],
+    fontFace: true,
+    keyframes: true,
+    variables: true,
   });
 
   const { code: readable } = transform({
