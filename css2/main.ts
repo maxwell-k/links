@@ -3,7 +3,9 @@ import fs from "node:fs";
 import { bundle, transform } from "lightningcss";
 import { PurgeCSS } from "purgecss";
 
-import type { CustomProperty, Declaration } from "lightningcss";
+import type { CustomProperty, Declaration, FontFaceRule } from "lightningcss";
+
+const ignored_font_faces = { family: "Open Sans", weights: [600, 800] };
 
 async function main() {
   const { code: bundled } = bundle({
@@ -23,6 +25,9 @@ async function main() {
     code: new TextEncoder().encode(purged),
     minify: false,
     visitor: {
+      Rule: {
+        "font-face": (rule) => font(rule.value),
+      },
       Declaration: {
         custom,
         position,
@@ -58,6 +63,19 @@ const position = (declaration: Declaration) => {
     declaration.value.value[0].value.type === "ident" &&
     declaration.value.value[0].value.value === "center"
   ) return [];
+};
+
+const font = (rule: FontFaceRule) => {
+  const properties = rule.properties;
+  const family = properties.find((i) => i.type === "font-family");
+  if (!family?.value.includes(ignored_font_faces.family)) return;
+  const weight = properties
+    .find((i) => i.type === "font-weight")
+    ?.value
+    .find((i) => i.type === "absolute")
+    ?.value;
+  if (weight?.type !== "weight") return;
+  if (ignored_font_faces.weights.includes(weight.value)) return [];
 };
 
 await main();
