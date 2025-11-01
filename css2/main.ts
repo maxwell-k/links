@@ -5,7 +5,7 @@ import { PurgeCSS } from "purgecss";
 
 import type { CustomProperty, Declaration, FontFaceRule } from "lightningcss";
 
-const ignored_font_faces = { family: "Open Sans", weights: [600, 800] };
+const index = "../index.html";
 
 async function main() {
   const { code: bundled } = bundle({
@@ -41,7 +41,9 @@ async function main() {
     code: readable,
     minify: true,
   });
-  fs.writeFileSync("main.css", minified);
+  let html = fs.readFileSync(index, "utf8");
+  html = html.replace(/<style>.*?<\/style>/, `<style>${minified}</style>`);
+  fs.writeFileSync(index, html);
 }
 
 // delete any float: center
@@ -67,15 +69,12 @@ const position = (declaration: Declaration) => {
 
 const font = (rule: FontFaceRule) => {
   const properties = rule.properties;
-  const family = properties.find((i) => i.type === "font-family");
-  if (!family?.value.includes(ignored_font_faces.family)) return;
-  const weight = properties
-    .find((i) => i.type === "font-weight")
+  const url = properties
+    .find((i) => i.type == "source")
     ?.value
-    .find((i) => i.type === "absolute")
-    ?.value;
-  if (weight?.type !== "weight") return;
-  if (ignored_font_faces.weights.includes(weight.value)) return [];
+    .find((i) => i.type === "url")
+    ?.value.url.url || "";
+  if (url.startsWith("../fonts/")) return [];
 };
 
 await main();

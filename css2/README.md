@@ -6,7 +6,7 @@ Node packages:
 
     eval "$(fnm env --shell zsh)" && fnm use
 
-Command to generate CSS bundle:
+Command to update inline CSS in `../index.html`:
 
     ./main.ts
 
