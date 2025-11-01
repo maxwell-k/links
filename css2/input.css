@@ -18,14 +18,34 @@ footer {
   font-family: "Nunito";
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts2/nunito-v32-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  /* url is relative to index.html as its <head> has a <style> with this minified */
+  src: url("fonts2/nunito-v32-latin-900.woff2") format("woff2");
 }
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Source Serif 4";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts2/source-serif-4-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  /* url is relative to index.html as its <head> has a <style> with this minified */
+  src: url("fonts2/source-serif-4-v14-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  /* url is relative to index.html as its <head> has a <style> with this minified */
+  src: url("fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  /* url is relative to index.html as its <head> has a <style> with this minified */
+  src: url("fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2")
+    format("woff2");
 }
 h1 {
   color: #00547c;
