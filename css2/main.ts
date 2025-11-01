@@ -40,7 +40,7 @@ async function main() {
     code: readable,
     minify: true,
   });
-  fs.writeFileSync("style.css", minified);
+  fs.writeFileSync("main.css", minified);
 }
 
 // delete any float: center
