@@ -22,10 +22,10 @@ footer {
 }
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Kameron";
+  font-family: "Source Serif 4";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts2/kameron-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts2/source-serif-4-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 h1 {
   color: #00547c;
@@ -34,5 +34,5 @@ h1 {
 }
 body p,
 details {
-  font-family: "Kameron", "Georgia", serif;
+  font-family: "Source Serif 4", serif;
 }
