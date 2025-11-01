@@ -1,14 +1,14 @@
 _The following commands assume the directory containing this README is the
 current working directory._
 
-Command to setup this shell to use Fast Node Manager and install the required
+Command to configure this shell to use Fast Node Manager:
 Node packages:
 
     eval "$(fnm env --shell zsh)" && fnm use
 
 Command to generate CSS bundle:
 
-    node main.ts
+    ./main.ts
 
 Command to download latest `brands-extended.css` from `littlelink-extended`:
 

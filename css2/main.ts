@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import fs from "node:fs";
 import { bundle, transform } from "lightningcss";
 import { PurgeCSS } from "purgecss";
