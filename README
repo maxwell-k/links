@@ -22,4 +22,9 @@ Favicon is generated using <https://favicon.io/favicon-generator/>:
 | Font Color:       | `#FFFFFF`        |
 | Background Color: | `#00547c`        |
 
+Commands to publish at <https://maxwell-k.github.io/>:
+
+    git remote add user-site git@github.com:maxwell-k/maxwell-k.github.io.git \
+    && git push user-site
+
 <!-- vim: set filetype=markdown : -->
