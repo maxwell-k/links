@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/maxwell-k/links#readme",
   "dependencies": {
-    "lightningcss": "^1.30.2",
-    "purgecss": "^7.0.2"
+    "lightningcss": "^1.31.1",
+    "purgecss": "^8.0.0"
   }
 }
