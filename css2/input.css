@@ -56,3 +56,13 @@ body p,
 details {
   font-family: "Source Serif 4", serif;
 }
+
+/* Use a darker colour from the Codeberg palette to increase the contrast
+ *
+ * See also:
+ * https://dequeuniversity.com/rules/axe/4.11/color-contrast
+ * https://codeberg.org/Codeberg/Design
+ */
+.button-codeberg {
+  --button-background: #0b3049;
+}
